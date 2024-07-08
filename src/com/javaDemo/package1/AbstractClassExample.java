@@ -1,6 +1,23 @@
 package com.javaDemo.package1;
 
-abstract class AbstractClass {
+interface arithmeticOperation{
+	
+	int calculateSum(int a, int b);
+	
+	
+}
+
+abstract class AbstractClass1{
+	
+	public void displayinputs(int a)
+	{
+		System.out.println("from displayInputs "+a);
+	}
+	
+	abstract void displayinputs1(int a);
+}
+
+abstract class AbstractClass extends AbstractClass1 {
 	public AbstractClass() { // constructor
 		System.out.println("You can create constructor in abstract class");
 	}
@@ -17,7 +34,9 @@ abstract class AbstractClass {
 	}
 }
 
-public class AbstractClassExample extends AbstractClass {
+public class AbstractClassExample extends AbstractClass implements arithmeticOperation{
+	
+	// u cannot extend multiple abstract classes as it causes ambiguity
 	public int add(int a, int b) { // implementing abstract method
 		return a + b;
 	}
@@ -38,6 +57,7 @@ public class AbstractClassExample extends AbstractClass {
 		int result2 = a.sub(20, 10); // calling non-abstract method
 		int result3 = a.multiply(20, 10); // calling static method
 		int result4=AbstractClass.multiply(20, 10);
+		int result5= a.calculateSum(10, 20);
 		System.out.println("Addition: " + result1);
 		System.out.println("Substraction: " + result2);
 		System.out.println("Multiplication: " + result3);
@@ -47,5 +67,17 @@ public class AbstractClassExample extends AbstractClass {
 		//to imp class, this method acts as another method but not as overridden 
 		//method from super class.
 		// default methods are allowed only in interfaces
+	}
+
+	@Override
+	public int calculateSum(int a, int b) {
+		System.out.println("from implemented interface emthod");
+		return a+b+10;
+	}
+
+	@Override
+	void displayinputs1(int a) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -34,7 +34,11 @@ interface Remunerator {
 	}
 	public void testFood();
 }
-class RemuneratorImpl implements Remunerator{
+
+interface Remunerator1{
+	public void testFood();
+}
+class RemuneratorImpl implements Remunerator, Remunerator1{
 
 	@Override
 	public double deductFoodFee() {

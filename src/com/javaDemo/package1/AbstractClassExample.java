@@ -30,6 +30,7 @@ public class AbstractClassExample extends AbstractClass {
 	{
 		return a*b*10;
 	}
+	
 
 	public static void main(String[] args) {
 		AbstractClassExample a = new AbstractClassExample();
@@ -45,5 +46,6 @@ public class AbstractClassExample extends AbstractClass {
 		// u can't override static method in . IF u add same method exactly in
 		//to imp class, this method acts as another method but not as overridden 
 		//method from super class.
+		// default methods are allowed only in interfaces
 	}
 }

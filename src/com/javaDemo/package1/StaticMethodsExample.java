@@ -9,6 +9,12 @@ public class StaticMethodsExample {
 		
 		System.out.println(pension);
 		System.out.println(healthPremium);
+		
+		Remunerator r= new RemuneratorImpl();
+		//here u cannot access Static method using r.
+		Remunerator.deductForPension(0);
+		double deductHealthInsurancePremium = r.deductHealthInsurancePremium(3000);
+		System.out.println(deductHealthInsurancePremium);
 	}
 
 }
@@ -37,10 +43,10 @@ class RemuneratorImpl implements Remunerator{
 	}
 	
 	
-//	public double deductHealthInsurancePremium(double sal)
-//	{
-//		return 0;
-//	}
+	public double deductHealthInsurancePremium(double sal)
+	{
+		return 0;
+	}
 	
 	public double deductForPension(double sal)
 	{

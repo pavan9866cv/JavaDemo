@@ -21,6 +21,7 @@ public class FunctionalInterfaceExample2 {
 
 	static void getTotalName(Person p1, Person p2) {
 		bc1.accept(p1, p2);
+		//accepts
 	}
 
 	public static void main(String[] args) {

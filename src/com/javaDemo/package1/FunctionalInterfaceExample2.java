@@ -2,18 +2,31 @@ package com.javaDemo.package1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class FunctionalInterfaceExample2 {
 	static Consumer<Person> c1 = (p) -> System.out.println(p.toString());
 	static Consumer<Person> c2 = p -> System.out.println(p.getId());
 
+	static BiConsumer<Person, Person> bc1 = (a, b) -> {
+		String name = a.getName();
+		String name2 = b.getName();
+		System.out.println(name + " " + name2);
+	};
+
 	static void getForAll(List<Person> person) {
 		person.forEach(c1);
 	}
 
+	static void getTotalName(Person p1, Person p2) {
+		bc1.accept(p1, p2);
+		//accepts
+	}
+
 	public static void main(String[] args) {
 		getForAll(PersonRepository.getAllPesons());
+		getTotalName(PersonRepository.getAllPesons().get(0), PersonRepository.getAllPesons().get(1));
 
 	}
 

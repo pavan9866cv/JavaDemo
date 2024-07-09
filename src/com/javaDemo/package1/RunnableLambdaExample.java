@@ -32,13 +32,25 @@ public class RunnableLambdaExample {
 			}
 		}).start();
 		;
-	
+
 		// new way
 		new Thread(() -> {
 			System.out.println("Thread5");
 			System.out.println("Thread 5.1");
 		}).start();
 		;
-	}
+		// from infy questionn
+		Thread threadInstance = new Thread(new Runnable() {
+			// run --- implementation
+			public void run() {
+				System.out.println(" Its me from thread");
+			}
+		});
+		threadInstance.start();
+		
+		new Thread(()->{
+			System.out.println("hi");
+		}).start();
+	};
 
 }

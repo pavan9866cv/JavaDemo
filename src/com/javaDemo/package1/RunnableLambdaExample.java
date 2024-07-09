@@ -32,6 +32,7 @@ public class RunnableLambdaExample {
 			}
 		}).start();
 		;
+	
 		// new way
 		new Thread(() -> {
 			System.out.println("Thread5");
